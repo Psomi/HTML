@@ -1,0 +1,45 @@
+<script>
+    /*문서 객체 모델
+    Document Object Model : DOM
+    DOMContentLoaded : head태그 안에서도 문서 객체 조작 가능하게끔 */
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script> document.body.innerHTML+='<h1>A</h1>'</script>  <!--head 태그 안에 script 태그--> <!--body태그가 있기 전에 만들어졌으므로 출력 안됨-->
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            //문서 객체 조작 가능
+            //태그 선택자
+            const h1= document.querySelector('h1')
+             h1.style.color='red'
+             h1.style.backgroundColor='orange'
+             //아이디 선택자
+             document.querySelector('#header').style.backgroundColor='blue'
+             //클래스 선택자
+             document.querySelector('.center.head').style.textAlign='center'
+             //속성 선택자
+            document.querySelector('[type=text]').style.borderRadius='10px'
+                        //후손 선택자
+            document.querySelector('body input').style.backgroundColor='orange'
+            //여러 태그 선택
+            document.addEventListener('DOMContentLoaded',()=>{
+                for (const element of document.querySelectorAll('input')){
+                    element.style.backgroundColor ='red'
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <script>//console.log('B') <!--body 태그 안 요소 위에 script 태그-->
+    //document.body.innerHTML+='<h1>B</h1>'</script> 
+    <h1 id="header" class="center head">HELLO</h1>
+    <input type="text">
+    <input>
+    <script> document.body.innerHTML+='<h1>C</h1>'</script> <!--body 태그 안 요소 아래에 script 태그-->
+</body>
+</html>
