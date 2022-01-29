@@ -1,0 +1,173 @@
+<script>
+    const sum=function (limit) {
+        let output=0
+        for (let i =1;i<=limit;i++){
+            output+=i
+        }
+        return output
+    }
+console.log(`합은 ${sum(10)}`)
+sum(10)
+</script>
+
+<script>//함수 만드는 방법 2가지
+    //선언적 함수
+    function f (매개변수,매개변수){
+        return 리턴값
+    }
+//익명함수
+    const f = function (매개변수,매개변수){
+        return 리턴값
+    }
+</script>
+
+//윤년 만들기
+<script>
+    const isLeapYear = function (연도) {
+        return (연도 %4===0)
+        &&(연도%100 !==0)
+        || (연도%400===0)
+    }
+    console.log(`2020년은 윤년일까?===${isLeapYear(2020)}`)
+    console.log(`2020년은 윤년일까?===${isLeapYear(2021)}`)
+</script>
+
+//최솟값 찾기
+<script>
+    const min=function (배열) {
+        let output=배열[0]
+        console.log(`처음 실행할 때의 output=${output}`)
+        
+        for (const value of 배열){
+            console.log(`현재 비교대상 ${output}과 ${value} 중에 작은것은?`) 
+            if (output>value) {
+                output = value
+            } 
+            console.log(`=${output}`)
+        }
+        return output
+    }
+
+    min([52,33,44,55,11,29])
+</script>
+
+//최대값 찾기
+<script>
+    const max=function (배열) {
+        let output = 배열[0]
+
+        for (const value of 배열){
+            if (output<value) {
+                output=value
+            }
+            
+        }
+        return output
+    }
+    max([34,2,22,1,90,23])
+</script>
+
+//요즘 함수 스타일
+<script>
+    const isLeapYear = function (연도=new Date().getFullYear()){
+        console.log(`구하고 있는 연도: ${연도}`)
+        return (연도%4 ===0)
+        && (연도 %100 !==0)
+        || (연도 %400 ===0)  //이 조건들이 맞으면 true가 return 됨
+    }
+    console.log(isLeapYear())
+</script>
+//옛날 함수 스타일
+<script>
+        const isLeapYear = function (연도){
+        //if (typeof(연도)==='undefined'){
+        //    연도=new Date().getFullYear()
+    연도 = typeof(연도)==='undefined' ? new Date().getFullYear()  : 연도   
+        console.log(`구하고 있는 연도: ${연도}`)
+        return (연도 %4 ===0)
+        && (연도 %100 !==0)
+        || (연도 %400 ===0)
+    }
+    console.log(isLeapYear())
+</script>
+
+<script>
+    const 테스트 = function (콜백함수){
+       콜백함수()
+    }
+    const 함수 = function (){
+        console.log("안녕하세요")
+    }
+    테스트(함수)
+</script>
+
+<script>
+    //함수 만들기 1 => 거의 익명함수를 사용!
+    let 함수 = function(){
+        console.log(`A함수입니다`)
+    }
+    함수 = function() {
+        console.log(`B함수입니다.`)
+          }
+    함수()
+    //함수 만들기 2 => 선언적 함수는 잘 사용 안함!
+    function 함수(){
+    console.log(`A함수입니다`)
+    }
+    function 함수(){
+    console.log(`B함수입니다`)
+    }
+    함수()
+</script>
+
+<script>
+//변수 선언
+let numbers = [273,11,3322,34,55,6]
+
+//홀수만 추출
+numbers = numbers.filter((value) => value %2 ===1)
+console.log(`홀수만 추출`)
+console.log(numbers)
+//100이하 추출
+numbers = numbers.filter((value)=>value <=100)
+console.log(`100이차 추출`)
+console.log(numbers)
+//5로 나눈 나머지가 0 
+numbers = numbers.filter((value)=> value%5===0)
+console.log(`5로 나눈 나머지가 0인 수 추출`)
+console.log(numbers)
+</script>
+
+<script>
+    const array=['사과','귤','배','바나나']
+    //index 출력
+    //for in 방법
+    console.log(`# for in 반복문`)
+    for (const i in array)
+    {console.log(i)}
+    //forEach 방법 => 더 많이 쓰임
+    array.forEach(function (value,index){
+        console.log(index)
+    })
+    //value 출력
+    //for of 방법
+    console.log(`# for of 반복문`)
+    for (const i of array)
+    {console.log(i)}
+    //forEach 방법
+    array.forEach((value,index) => {
+        console.log(value)
+    })   
+
+</script>
+
+<script>
+    함수=function(){console.log("1");};
+    함수=function(){console.log("2");};
+    함수()
+
+    함수=function(){console.log("1");};
+    function 함수(){console.log("2");};
+    함수()
+
+</script>

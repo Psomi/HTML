@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script> //글자 조작
+        document.addEventListener('DOMContentLoaded',() => {
+            const header1 = document.querySelector('#textContent')
+            const header2 = document.querySelector('#innerHTML')
+            //값을 추출한다
+            console.log(header1.textContent)
+            console.log(header2.innerHTML)
+            //지정된 태그에 원하는 값을 넣는다
+            header1.textContent = '원하는 <br>문자열' //<br>이 태그로서 기능 못하고 그대로 출력됨
+            header2.innerHTML = '원하는<br>문자열' //<br>이 태그로서 기능을 함
+
+        })
+    </script>
+</head>
+<body> <!--글자 조작하기-->
+    <h1 id="textContent">textContent 속성 기존 문자열</h1>
+    <h1 id="innerHTML">textContent 속성 기존 문자열</h1>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script> //속성 조작
+        document.addEventListener('DOMContentLoaded',() => {
+            //조작
+            const img = document.querySelector('img')
+            //값을 넣는 행위
+            img.setAttribute('src','http://placekitten.com/200/200')   //첫번쨰 매개변수:속성의 이름 , 두번째:값            
+            //값 추출
+            img.getAttribute()
+            console.log(img.getAttribute('src')) //console창에 주소가 출력됨
+            //표준에 소스가 있을 시 바로 이렇게 가능
+            img.src = 'http://placekitten.com/200/200'
+            console.log(img.src) 
+        })
+    </script>
+</head>
+<body>
+    <img src="" alt="">
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script> //스타일 조작
+        document.addEventListener('DOMContentLoaded',() => {
+            const divs = document.querySelectorAll('div')
+            divs.forEach((div, key)=> {
+                div.style.backgroundColor=`rgb(${key*25},${key*25},${key*25})`
+                div.style.height='10px' //숫자만 입력하면 에러! 픽셀px까지 입력 필요
+            })
+        })
+    </script>
+</head>
+<body>
+   <div></div>
+   <div></div>
+   <div></div>
+   <div></div>
+   <div></div>
+   <div></div>
+   <div></div>
+   <div></div>
+   <div></div>
+   <div></div>
+</body>
+</html>

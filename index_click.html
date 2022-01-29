@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',() => {
+            const header = document.createElement('h1')
+            document.body.appendChild(header)  //h1태그를 body태그에 붙임
+
+            let count =0
+            header.style.userSelect = 'none' // 클릭 시 음영처리 깜빡이는거 막아줌
+            header.textContent = `클릭 횟수 : ${count}`
+            header.addEventListener('click',() => 
+            {
+                count++
+                header.textContent=`클릭 횟수 : ${count}`
+            })
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let counter = 0
+        const listener = () => {
+            header.textContent=`클릭 횟수 : ${++counter}`
+        }
+
+        const header = document.createElement('h1')
+        header.textContent=`클릭횟수:0`
+
+        const p = document.createElement('p')
+        p.textContent = `이벤트 연결 상태 : 해제`
+
+        const connectButton = document.createElement('button')
+        connectButton.textContent = '이벤트 연결 버튼'
+        connectButton.addEventListener('click',() => {
+            header.addEventListener('click',listener )
+            p.textContent = '이벤트 연결 상태 : 연결'
+        })
+
+        const disconnectButton = document.createElement('button')
+        disconnectButton.textContent = '이벤트 해제 버튼'
+        disconnectButton.addEventListener('click',() => {
+            header.removeEventListener('click',listener)
+            p.textContent='이벤트 연결 상태 : 해제'
+        })
+
+        //화면에 추가
+        document.body.appendChild(header)
+        document.body.appendChild(connectButton)
+        document.body.appendChild(disconnectButton)
+        document.body.appendChild(p)
+
+    </script>
+    
+</body>
+</html>
+
+<script>/*
+    querySelector() 메소드로 다음과 같은 요소를 선택할수 있는 선택자!
+    <h1 id="header"> 제목 <h1>
+    - h1
+    - #header
+    - h1#header
+
+    <span class="active">선택</span>
+    - span
+    - .active
+    - span.active
+
+    <input id="name-input" type="text" name="name">
+    - input
+    - #name-input
+    - [type=text]
+    - input[type=text][name=name]*/
+</script>
