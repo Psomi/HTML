@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',() => {
+            const select = document.querySelector('select')
+            const p = document.querySelector('p')
+
+            select.addEventListener('change',(event) =>{
+                const options = event.currentTarget.options
+                const index = options.selectedIndex
+                p.textContent = `선택:${options[index].textContent}`
+                //console.log(options) console창에서 출력됨
+                //console.log(index)
+                //여러개 선택 가능하도록 하고싶을 때
+               
+        })
+    })
+    </script>
+</head>
+<body>
+    <select name="" id="" multiple> <!--multiple 빼면 다중 선택 안됨-->
+        <option value="">떡볶이</option>
+        <option value="">순대</option>
+        <option value="">오뎅</option>
+        <option value="">튀김</option>
+    </select>
+    <p>선택:떡볶이</p>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',() => {
+            const select = document.querySelector('select')
+            const p = document.querySelector('p')
+
+            select.addEventListener('change',(event) =>{
+                const options = event.currentTarget.options
+                const list = []
+                for (const option of options){
+                    if(option.selected){
+                        list.push(option.textContent)
+                    }
+                }
+                p.textContent =`선택 :${list.join(',')}`
+                })
+        })
+    </script>
+</head>
+<body>
+    <select name="" id="" multiple>
+        <option value="">떡볶이</option>
+        <option value="">순대</option>
+        <option value="">오뎅</option>
+        <option value="">튀김</option>
+    </select>
+    <p>선택:떡볶이</p>
+</body>
+</html>
