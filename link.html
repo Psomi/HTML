@@ -7,6 +7,7 @@
        document.addEventListener('DOMContentLoaded',()=>{
             const a = document.querySelector('a') //a 태그 들고오기
             a.addEventListener('click',(event)=>{  // 클릭 이벤트 연결
+                event.currentTarget
                 event.preventDefault()  //이벤트 막기
             })
             a.addEventListener('contextmenu',(event) => {

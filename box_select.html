@@ -9,13 +9,11 @@
             const p = document.querySelector('p')
 
             select.addEventListener('change',(event) =>{
-                const options = event.currentTarget.options
-                const index = options.selectedIndex
+                const options = event.currentTarget.options //4개의 옵션들 가져옴
+                const index = options.selectedIndex //어떤 옵션을 선택했는지 가져옴
                 p.textContent = `선택:${options[index].textContent}`
                 //console.log(options) console창에서 출력됨
                 //console.log(index)
-                //여러개 선택 가능하도록 하고싶을 때
-               
         })
     })
     </script>
@@ -61,6 +59,43 @@
         <option value="">오뎅</option>
         <option value="">튀김</option>
     </select>
-    <p>선택:떡볶이</p>
+    <p>선택:</p>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+         document.addEventListener('DOMContentLoaded',() => {
+             const input = document.querySelector('input')
+             const select = document.querySelector('select')
+            const span = document.querySelector('span')
+         
+         input.addEventListener('keyup',() => {
+             const  현재값 = Number(input.value)
+             const 선택된단위 = select.options[select.options.selectedIndex]
+             span.textContent = 현재값 * Number(선택된단위.value)
+            })
+        select.addEventListener('change',() => {
+             const  현재값 = Number(input.value)
+             const 선택된단위 = select.options[select.options.selectedIndex]
+             span.textContent = 현재값 * Number(선택된단위.value)
+            })
+         })         
+         
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="">cm=
+    <span></span> <!--줄바꿈 되지 않고 한 줄에 다 나옴-->
+    <select name=""id="">
+        <option value="10">mm</option>
+        <option value="0.01">m</option>
+        <option value="0.393701">inch</option>
+    </select>
+    
 </body>
 </html>
