@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+    //함수 선언
+    function 메일보내기 (객체){
+        //매개변수가 잘못 들어왔을 때 예외처리!
+        if (typeof(객체.발신인)==='undefined') {
+            throw '발신인 매개변수에 문제가 있다. '
+        }
+        if (typeof(객체.수신인)==='undefined') {
+            throw '수신인 매개변수에 문제가 있다. '
+        }
+        if (typeof(객체.내용)==='undefined') {
+            throw '내용 매개변수에 문제가 있다. '
+        }
+        console.log(`발신인 :${객체.발신인}`)
+        console.log(`수신인 : ${객체.수신인}`)
+        console.log(객체.내용)
+    }    
+    //함수 호출
+    메일보내기 ({
+        발신인 : '마루',
+        수인 : '소미',
+        내용 : '사랑해'
+    })
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+    //매개변수 지정의 다른 예
+    function 메일보내기 ({발신인,수신인,내용}){
+        console.log(`발신인 :${발신인}`)
+        console.log(`수신인 : ${수신인}`)
+        console.log(내용)
+    }    
+    메일보내기 ({
+        발신인 : '마루',
+        수신인 : '소미',
+        내얌 : '사랑해'
+    })
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
