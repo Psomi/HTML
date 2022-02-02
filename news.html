@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WBC Cafe-news</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href=https://unpkg.com/ress/dist/ress.min.css>
+    <meta name="description" content="커피와 음식 제공하는 카페">
+    <!--css-->
+    
+    <style>
+        h2{font-family: 'Chau Philomene One', sans-serif;}
+        
+        a{text-decoration:none}
+        img{max-width: 100%}
+        .wrapper{
+            max-width: 1100px;
+            margin: 0 auto;
+            padding:0 4%;
+        }
+
+        .home-content{
+            text-align: center;
+            margin-top: 10%;
+        }
+        .home-content p{
+            font-size: 1.123rem;
+            margin: 10px 0 42px;
+            
+        }
+        .page-title{
+            font-size: 3em;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+        .button{
+            font-size: 1.375rem;
+            background: #0bd;
+            color: #fff;
+            border-radius: 5px;
+            padding: 18px 30px;
+        }
+        .button:hover {
+            background:#0090aa
+        }
+        .logo{
+            width: 210px;
+            margin-top: 14px;
+        }
+        .page-header{ 
+            display: flex;
+            justify-content: space-between;
+        }
+        .main-nav{
+            display: flex;
+            font-size: 1.25rem;
+            text-transform:uppercase;
+            margin-top: 34px;
+            list-style: none;
+        }
+        .main-nav li{
+            margin-left: 36px;
+        }
+        .main-nav a {
+            color: #432;
+        }
+        .main-nav a:hover{
+            color: #0bc;
+        } 
+        #home{
+            background-image: url(./main-bg.jpg);
+            min-height: 100vh;
+            background-size:cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+        }
+        .big-bg{
+            background-size:cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+        }
+        h2 {
+                line-height: 1.7;
+            }
+        #news{
+        background-image: url(./images/news-bg.jpg);
+        height: 270px;
+        margin-bottom: 40px;
+        }
+        #news.page-title{
+            text-align: center;
+        }
+        .news-contents {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 50px;
+            }
+        article{
+            width: 74%;
+        }
+        aside{
+            width: 22%;
+        }
+        footer{
+                    background:#432;
+                    text-align: center;
+                    padding:26px 0;
+                }
+        footer p{
+            color:#fff;
+            font-size: 0.875rem;
+        }
+</style>
+</head>
+<body>
+    <div id="news" class="big-bg">
+    <header class="page-header">
+    <h1><a href="project.html"><img src="images/logo.svg" alt="WBC카페 홈" class="logo"></a></h1>
+
+    <nav>
+        <ul class="main-nav">
+            <li><a href="news.html">News</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    </header>
+    <div class="wrapper">
+        <h2 class="page-title">news</h2>
+
+        </div>
+            </div>
+            <div class="news-contents wrapper">
+                <article>메인 콘텐츠 부분</article>
+                <aside>사이드바 부분</aside>
+
+            </div>
+        <footer>
+            <div class="wrapper">
+                <p><small>&copy;2019 WBC cafe</small></p>
+            </div>
+        </footer>
+
+</body>
+</html>

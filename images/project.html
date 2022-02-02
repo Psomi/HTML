@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WBC Cafe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href=https://unpkg.com/ress/dist/ress.min.css>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
+    <meta name="description" content="커피와 음식 제공하는 카페">
+    <!--css-->
+    
+    <style>
+        h2{font-family: 'Chau Philomene One', sans-serif;}
+        ul{font-family: 'Chau Philomene One', sans-serif;}
+        h3{font-family: 'Chau Philomene One', sans-serif;}
+        p{font-family:'Dongle', sans-serif;}
+        a{text-decoration:none}
+        img{max-width: 100%}
+        .wrapper{
+            max-width: 1100px;
+            margin: 0 auto;
+            padding:0 3%; 
+        }
+
+        .home-content{
+            text-align: center;
+            margin-top: 10%;
+        }
+        .home-content p{
+            font-size: 3.163rem;
+            margin: 30px 10px 30px 10px;
+            
+        }
+        .page-title{
+            font-size: 3em;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+        .button{
+            font-size: 1.375rem;
+            background: #0bd;
+            color: #fff;
+            border-radius: 30px;
+            padding: 10px 30px;
+        }
+        .button:hover {
+            background:#0090aa
+        }
+        .logo{
+            width: 210px;
+            margin-top: 14px;
+        }
+        .page-header{ 
+            display: flex;
+            justify-content: space-between;
+        }
+        .main-nav{
+            display: flex;
+            font-size: 1.25rem;
+            text-transform:uppercase;
+            margin-top: 34px;
+            list-style: none;
+        }
+        .main-nav li{
+            margin-left: 36px;
+        }
+        .main-nav a {
+            color: #111;
+        }
+        .main-nav a:hover{
+            color: #0bc;
+        } 
+        #home{
+            background-image: url(./main-bg.jpg);
+            min-height: 100vh;
+        }
+        .big-bg{
+            background-size:cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+        }
+        .food{
+            font-size: 1.25rem;
+            font-weight: bold;
+            line-height: 1.0;
+            margin-top: 20px;
+            color:darkslategray;
+            list-style-type: none;
+            
+        }
+        .sub{
+            text-align: center;
+        }
+        .sub-title{
+            font-size: 1.5em;
+            text-transform: uppercase;
+            font-weight: normal;
+            margin-top: 20px;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div id="home" class="big-bg">
+    <header class="page-header wrapper">
+    <h1><a href="project.html"><img src="logo.svg" alt="WBC카페 홈" class="logo"></a></h1>
+
+    <nav>
+        <ul class="main-nav">
+            <li><a href="news.html">News</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    </header>
+    <div class="home-content wrapper">
+        <h2 class="page-title">we will make your day</h2>
+        <p>멋진 카페에서 힐링 시간을 가지세요</p>
+        <a href="menu.html" class="button">메뉴보기</a>
+        <ul class="food">
+            <li>coffee</li>
+            <li>food</li>
+        </ul>
+    </div>
+    <div class="sub wrapper">
+        <h3 class="sub-title">question</h3>
+        <p>문의 전화번호 : 01089</p>
+
+    </div>
+
+</body>
+</html>
