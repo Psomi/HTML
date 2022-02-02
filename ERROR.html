@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script> //고급 예외 처리
+        document.addEventListener('DOMContendLoaded',() => {
+            const h1 = document.querySelector('h1')
+
+            try {
+            //예외가 발생할 가능성 있는 코드
+                h1.textContent = '변경'
+            } catch (error) {
+            //예외 발생 시 실행할 코드    
+                console.log('error!')
+            } finally {
+            //무조건적으로 실행되는 코드
+                }
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script> //기본 예외 처리
+         document.addEventListener('DOMContendLoaded',() => {
+            const h1 = document.querySelector('h1')
+            if(h1===null){
+                console.log('error!')
+            }else {
+            h1.textContent = '변경'
+             }
+                })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        //finally가 의미가 있는 경우 ->  return 때문에 아래 코드는 출력이 안되는데 finally만 됨
+        const 예 =() => {
+            try{
+                console.log('예외가 발생할 가능성 있는 코드')
+                return
+            } catch(e) {
+                console.log(' 예외가 발생할 때 실행할 코드')
+            } finally {
+                console.log('무조건적으로 실행할 코드')
+            }
+        }
+        예()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script> //throw : 라이브러리 또는 프레임워크를 만드는 정도로 쓰임. 직접 사용 안하고 이걸로 발생한 예외를 당하게 됨.
+        const getParamter = (r) => {
+            if (r<0) {
+                throw  '길이는 음수가 될 수 없다'
+            }
+            const pi = 3.14
+            return 2*pi*r
+        }
+        try {
+            console.log(getParamter())
+        } catch(e) {
+            console.log('어떤 문제가 발생했다')
+        }
+        console.log('프로그램이 정상적으로 종료되었다')
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

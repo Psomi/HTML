@@ -1,0 +1,142 @@
+<script> //메서드
+    const dog={
+        name : '마루',
+        age : 10,
+        bark : function () {
+            console.log(`${dog.name}가 짖습니다.`)
+            //this를 이용할수도 있음
+            console.log(`${this.name}가 짖습니다.`)
+            console.log(this)           },
+        sleep: () => {
+            console.log(`${dog.name}가 잡니다`)
+        }
+    }
+    dog.bark()
+    dog.sleep()
+    for (let key in dog){
+        console.log(`${key} : ${dog[key]}`);
+    }
+</script>
+
+<script>
+    //객체의 키와 값을 정적으로 생성
+    const pet = {
+        name : '구름',
+        age:9
+    }
+    //객체의 기와 값을 동적으로 생성
+    pet.color='brown'
+    //출력
+    console.log(pet) //{name: '구름', age: 9, color: 'brown'}
+    delete pet.color
+</script>
+
+<script>
+    function printLang(code){
+        return printLang._lang[code]
+    }
+    printLang._lang = {
+        ko :"한국어",
+        en : '영어',
+        ja : "일본어"
+    }
+    console.log('printLang("ko"):', printLang('ko'))
+    console.log('printLang("en"):', printLang('en'))
+</script>
+
+<script> //prototype
+    String.prototype.value=10
+    String.prototype.contain = function(다른문자열) {
+        return this.indexOf(다른문자열)>=0
+    }
+    const a='문자열'
+    console.log(`a.contain('문자'):${a.contain('문자')}`)
+</script>
+
+<script> //메서드
+const input=`a,b,s,d,123,44,55  `
+input.trim()
+input.trim().split('\n')
+input.trim().split('\n').map((line)=>line.split(','))
+</script>
+
+<script>
+    class Product{
+        constructor(name,price){
+            this.name=name
+            this.price=price
+        }
+        print(){
+            console.log(`${this.name}의 가격은 ${this.price}`)
+        }
+    }
+    let products={
+        new Product('바나나',1200),
+        new Product('사과',120),
+        new Product('귤',1000),
+    };
+    for (let product of products){
+        product.print();
+    }
+</script>
+
+<script> //String 객체
+    let string = 'Hello World';
+
+    string=string.toLowerCase();
+    string=string.replace(' ','|');
+    let array=string.split('|');
+
+    console.log(string);
+</script>
+
+<script> //Math 메서드 매개변수 값 특징 살피기 , 구글링하기 (javascript math.sin 매개변수)
+    const degree =90
+    const rad = degree*Math.PI/180
+    console.log(Math.sin(rad))
+    //Math.sin(90) !=== 1
+</script>
+
+<script> //객체 기본값을 지정 -> 잘 안쓰임!
+    const test = function (name,age,color) {
+        return `${name} : ${age} : ${color}`
+    }
+    console.log(test('구름',7,'갈색'))
+
+    //매개변수로 객체를 전달하자! 이게 더 직관적임
+    console.log(test({
+        name : '마루',
+        age=10,
+        color='흰색'
+    }))
+    const test = function (object) {
+        //고정 값 지정하기
+        //과거방법
+        object.status !==undefined ? object.status : '이상없음'
+        object.status = object.status ? object.status : '이상없음'
+        object.status = object.status || '이상없음'
+        //현대방법
+        object={status : '이상없음',...object}
+        fun = function ({name,age,color,status='이상없음'}) {
+            return `${name} : ${age} : ${color} : ${status}`    
+        }
+        return `${object.name} : ${object.age} : ${object.color}`
+    }
+    //젤 깔끔한 방법?
+    const test=function({
+        name,
+        age,
+        color,
+        status='이상없음'
+    }){
+        return `${name}:${age}:${color}:${status}`
+    }
+    console.log(test({
+        name:'마루',
+        age:10,
+        color:'흰색'
+    }))
+
+
+
+</script>

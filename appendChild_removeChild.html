@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',() => {
+            const header = document.createElement('h1')
+            header.textContent = 'createElement로 만든 태그'
+            header.style.color='red'
+            
+            //출력을 위해 body태그 안에 header태그를 넣음
+            const body = document.querySelector('body')
+            body.appendChild(header)
+            setTimeout(() => {
+                body.removeChild(header) //이 문장보다는 아래 문장이 더 자주 쓰임
+                header.parentNode.removeChild(header)
+            }, 2000);
+        
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',() => {
+            const header=document.createElement('h2') //문서 객체 만들기
+            header.textContent='안녕하세요' //속성
+            const first = document.querySelector('.first')
+            const second = document.querySelector('.second')
+
+            first.appendChild(header) //이동 원할 때
+            setTimeout(() => {
+             second.appendChild(header)   
+            }, 2000);
+
+            //왔다갔다 이동 원할 때
+            const toFirst=() => {
+                first.appendChild(header)
+                setTimeout(toSecond,1000)
+            }
+            const toSecond=() => {
+                second.appendChild(header)
+                setTimeout(toFirst,1000)
+            }
+            toFirst()
+        })
+    </script>
+</head>
+<body>
+    <div class="first">
+        <h1>첫 번째 div 태그 내부</h1>
+    </div>
+    <hr>
+    <div class="second">
+        <h1>두 번째 div 태그 내부</h1>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script> 
+        document.addEventListener('DOMContentLoaded',() => {
+            const header=document.createElement('h2') //문서 객체 만들기
+            header.textContent='안녕하세요' //속성
+            const array = [
+                document.querySelector('.first'),
+                document.querySelector('.second'),
+            ]
+            //카운터 함수
+            let 카운터 =0
+            const fun =() => {
+                array[카운터%2].appendChild(header)
+                카운터++
+            }
+            setInterval(fun,1000)
+            fun()
+        })
+    </script>
+</head>
+<body>
+    <div class="first">
+        <h1>첫 번째 div 태그 내부</h1>
+    </div>
+    <hr>
+    <div class="second">
+        <h1>두 번째 div 태그 내부</h1>
+    </div>
+</body>
+</html>

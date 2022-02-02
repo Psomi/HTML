@@ -1,0 +1,113 @@
+<script>
+  //입력 : prompt() inch 단위 숫자
+  const input = Number(prompt('inch단위의 숫자 입력해주세요'))
+  //처리 : 1inch -> 2.54cm
+  const output=input*2.54
+
+  //출력 : cm 단위 숫자
+  alert(`${input}inch = ${output}cm입니다`)
+  
+</script>
+
+<script>
+  const date=new Date()
+  //date.getFullYear()
+  //date.getMonth()
+  //date.getDate()
+  const hours = date.getHours()
+
+  if (hours<12){
+    alert('오전입니다')
+  }
+  
+  if (hours>=12){
+    alert("오후입니다")
+  }
+
+</script>
+
+<script>
+  const hours=(new Date()).getHours()
+  if (hours<10){
+    alert ('아침 먹을 시간')
+  } else if (hours<16){
+    alert ('점심 먹을 시간')
+  } else {
+    alert ('저녁 먹을 시간')
+  }
+  </script>
+
+  <script>
+    const a=Number(prompt('첫 번째 숫자',''))
+    const b=Number(prompt('두 번째 숫자',''))
+
+    if (a>b){
+      alert('첫 번째 입력한 숫자가 더 크다')
+    } else if (a===b){
+      alert ('숫자가 같다')
+    } else {
+      alert ('두번째 숫자가 더 크다')
+    }
+  </script>
+
+<script>
+  const month=(new Date()).getMonth()+1 //0~11 -> 1~12
+
+  if (3<=month&&month<=5){
+    alert('봄')
+  }
+  if (6<=month&&month<=8){
+    alert('여름')
+  }
+  if (9<=month&&month<=11){
+    alert('가을')
+  }
+    if ((1<=month&&month<=2)||(month==12)){
+    alert('겨울')
+  }
+</script>
+
+<script>
+  const x=Number(prompt('숫자 입력하세요',''))
+  switch(x){
+    case 1:
+      alert('1입니다')
+      break
+    case 2:
+      alert('2입니다')
+      break
+    case 3:
+      alert('3입니다')
+      break
+    default :
+    alert('입력한 값이 1-3이 아닙니다')
+  }
+</script>
+
+<script>
+  const 입력=prompt('정수를 입력하세요')
+  //const 끝자리=입력[입력.length-1]
+
+  if (입력%2===1) {
+    alert("홀수입니다")
+
+  } else {
+    alert("짝수입니다")
+  }
+</script>
+
+<script>
+  const rawInput = prompt('태어난 해 입력','')
+  const year=Number(rawInput)
+  const e=year%12
+
+  let result
+  switch (e) {
+    case 0 :result = '원숭이'; break
+    case 1 :result = '닭'; break
+    case 2 :result = '개'; break
+    case 3 :result = '돼지'; break
+   
+  }
+</script>
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',() => {
+            const checkbox = document.querySelector('input[type=checkbox')
+            const checkboxResult = document.querySelector('h1#checkbox')
+            checkbox.addEventListener('change',() => {
+                if (checkbox.checked) {
+                    checkboxResult.textContent = '체크'
+                } else {
+                    checkboxResult.textContent = '해제'
+                }
+            })
+            const radios = document.querySelectorAll('input[type=radio][name=gender]')
+            const radiosResult = document.querySelector('h1#radiobutton')
+            radios.forEach((radio)=> {
+                radio.addEventListener('change',(event) => {
+                    radiosResult.textContent = event.currentTarget.value
+
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <!--어떤 대상의 T/F선택-->
+    <input type="checkbox" name="" id=""><br>
+    <h1 id = "checkbox"></h1>
+    <!--여러 대상 중 하나 선택-->
+    <input type="radio" name="gender" id=""value="여성">여성<br>
+    <input type="radio" name="gender" id=""value="남성">남성<br>
+    <input type="radio" name="gender" id=""value="직접지정">직접지정<br>
+    <h1 id="radiobutton"></h1>
+</body>
+</html>
+
+<!DOCTYPE html> <!--타이머 설정-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            let seconds = 0
+            let timerId = 0
+        const checkbox = document.querySelector('input[type=checkbox]')
+        const checkboxResult = document.querySelector('h1#checkbox')
+        checkbox.addEventListener('change',() => {
+            document.body.style.background='yellow'
+            if(checkbox.checked){
+                timerId = setInterval(() => {
+                    seconds +=1
+                    checkboxResult.textContent = `${seconds}초`
+                },1000)              
+        } else {
+            document.body.style.background='white'
+            clearInterval(timerId)
+        }
+        })
+    })
+    </script>
+
+</head>
+<body>
+    <input type="checkbox" name="" id="">타이머 활성화<br>
+    <h1 id="checkbox">0초</h1>
+    
+</body>
+</html>
