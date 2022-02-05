@@ -1,0 +1,11 @@
+.special_wrap{padding: 0 1rem 2.5rem;}
+.special{display: block; width:100%;padding:0; } /*너비는 초기화로 100%시켜줘야 함!, padding으로 y축 중앙배치하기*/
+.special h2{width: 100%;font-size: .9rem;line-height: 3;background:none;text-align: center;border-bottom:1px solid #bcbbbc}
+.special h2:after{content: "";display: inline-block;width:10px;height: 10px;transform: rotate(45deg)translateY(-0.3rem);
+border-right:5px solid #ed1c24;border-bottom:5px solid #ed1c24;}
+.special h2 br{display: none;}
+.special ul{width: 100%;padding: 1.25rem 0 0;}
+.special ul li{background-size:auto 3.5rem}
+.special ul li:first-child:before{display: none;} /*첫번째 왼쪽 선만 없애기*/
+.special ul li strong{font-size: .85rem;}
+.special ul li p{padding:1.6rem 0 0;font-size: .7rem;}

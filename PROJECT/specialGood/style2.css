@@ -1,0 +1,14 @@
+html{font-size: 20px;}
+body{font-size:1rem; padding: 5rem 0 0;}
+.special_wrap{background:#f0f0f0;padding: 0 0 2.5rem;}
+.special_wrap .line{border-bottom: 1px solid #bcbbbc;}
+.special{display: flex; justify-content: space-between; width: 54.5rem;padding:1.25rem 0 0;margin:0 auto;}
+.special h2{width: 10.75rem;font-size: 1.3rem;line-height: 1.65rem; color:blue; background:url(../favicon.png)no-repeat right top}
+.special ul{display: flex; width:42.05rem;list-style: none;}
+.special ul li{flex:1 ; height:12rem; position: relative; padding: 0 0 0 1.5rem;background:no-repeat right 0.85rem bottom}
+.special ul li:before {content:""; position:absolute;left:0;top:0; height:200px; border-left:1px solid skyblue}
+.speical ul li strong{font-size: 1.25rem;}
+.special ul li p{padding:1.65rem 0 0;font-size: .85rem;}
+.special ul li:nth-child(1){background-image:url(../favicon.png)}
+.special ul li:nth-child(2){background-image:url(../favicon.png)}
+.special ul li:nth-child(3){background-image:url(../favicon.png)}
