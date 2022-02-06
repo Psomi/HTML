@@ -1,5 +1,5 @@
-html{font-size: 20px;}
-body{font-size:1rem; padding: 5rem 0 0;}
+html{font-size: 25px;}
+body{padding: 5rem 0 0;}
 .special_wrap{background:#f0f0f0;padding: 0 0 2.5rem;}
 .special_wrap .line{border-bottom: 1px solid #bcbbbc;}
 .special{display: flex; justify-content: space-between; width: 54.5rem;padding:1.25rem 0 0;margin:0 auto;}
